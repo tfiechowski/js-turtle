@@ -316,6 +316,20 @@ $('#command').change(function () {
    }
 });
 
+$('#run').click(function () {
+   var definitionsText = $('#definitions').val();
+   try {
+     // execute any code in the definitions box
+     eval(definitionsText);
+     // execute the code in the command box
+   } catch(e) {
+     alert('Exception thrown, please see console');
+     throw e;
+   } finally {
+     // clear the command box
+   }
+});
+
 $('#resetButton').click(function() {
   reset();
 });
