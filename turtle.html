@@ -1,16 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-   <head>
-      <title>Javascript Turtle</title>
-      <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
-      <link type="text/css" rel="stylesheet" href="turtle.css" />
-   </head>
-   <body>
-      <div id="wrap">
-         <h1>Javascript Turtle Graphics</h1>
-         <div id="leftcolumn">
-            <h4>Language Reference</h4>
-            <code>
+
+<head>
+  <title>Javascript Turtle</title>
+  <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="turtle.css" />
+</head>
+
+<body>
+  <h1>Javascript Turtle Graphics</h1>
+  <div id="wrap">
+    <div class="column">
+      <h4>Language Reference</h4>
+      <code>
               forward(distance) <br/>
               right(angle) <br/>
               left(angle) <br/>
@@ -32,41 +34,32 @@
               wrap(bool) <br/>
               animate(action,ms) <br/>
             </code>
-         </div> <!-- leftcolumn -->
-         <div id="midcolumn">
-            <h4>Canvas</h4>
-            <canvas id="turtlecanvas" width="300" height="300"></canvas>
-            <canvas id="imagecanvas" width="300" height="300" style="display:none"></canvas>
-	    <div>
-              <button id="run">Run</button>
-	      <button id="resetButton">Reset</button>
-            </div>
+    </div>
+    <!-- leftcolumn -->
+    <div class="column">
+      <h4>Canvas</h4>
+      <canvas id="turtlecanvas" width="300" height="300"></canvas>
+      <canvas id="imagecanvas" width="300" height="300" style="display:none"></canvas>
+      <h4>Command</h4>
+      <input type="text" id="command" />
+      <br/>
+      <button id="run">Run</button>
+      <button id="resetButton">Reset</button>
 
-         </div> <!-- midcolumn -->
-         <div id="rightcolumn">
-            <h4>Definitions</h4>
-            <textarea id="definitions" rows="20">
-// Define helper functions here.
-// For example:
+    </div>
+    <!-- midcolumn -->
+    <div id="rightcolumn">
+      <h4>Code editor</h4>
 
-function square(side) {
-   repeat(4, function () {
-      forward(side);
-      right(90);
-   });
-}
+      <div id="monaco-editor"></div>
+    </div>
+    <!-- rightcolumn -->
+  </div>
+  <!-- wrap-->
 
-function demo() {
-   hideTurtle();
-   colour(0,0,255,1);
-   for(s = 100; s > 0; s -= 10) {
-      square(s);
-      right(36);
-   }
-}
-            </textarea>
-         </div> <!-- rightcolumn -->
-      </div> <!-- wrap-->
-      <script type="text/javascript" src="turtle.js"></script>
-   </body>
+  <script src="monaco-editor/min/vs/loader.js"></script>
+  <script type="text/javascript" src="turtle.js"></script>
+
+</body>
+
 </html>
