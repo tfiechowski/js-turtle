@@ -35,3 +35,7 @@ body h1 {
 #monaco-editor {
   flex: 1 1;
 }
+
+#console-output {
+  margin: 2rem;
+}

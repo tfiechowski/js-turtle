@@ -2,6 +2,17 @@
 
 let MonacoEditor;
 
+let consoleLog = console.log;
+const consoleOutput = document.getElementById("console-output");
+
+console.log = args => {
+  consoleLog(args);
+  consoleLog("args ", args);
+  const log = document.createElement("div");
+  log.textContent = args;
+  consoleOutput.appendChild(log);
+};
+
 require.config({ paths: { vs: "monaco-editor/min/vs" } });
 require(["vs/editor/editor.main"], function() {
   MonacoEditor = monaco.editor.create(
@@ -345,6 +356,10 @@ $("#run").click(function() {
 
 $("#resetButton").click(function() {
   reset();
+});
+
+$("#clear-console").click(function() {
+  consoleOutput.textContent = '';
 });
 
 reset();
