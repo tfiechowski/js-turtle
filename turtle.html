@@ -43,6 +43,7 @@
       <h4>Command</h4>
       <input type="text" id="command" />
       <br/>
+      <button id="run">Run</button>
       <button id="resetButton">Reset</button>
 
     </div>
@@ -55,22 +56,9 @@
     <!-- rightcolumn -->
   </div>
   <!-- wrap-->
-  <script type="text/javascript" src="turtle.js"></script>
 
   <script src="monaco-editor/min/vs/loader.js"></script>
-  <script>
-    require.config({ paths: { 'vs': 'monaco-editor/min/vs' } });
-    require(['vs/editor/editor.main'], function () {
-      var editor = monaco.editor.create(document.getElementById('monaco-editor'), {
-        value: [
-          'function x() {',
-          '\tconsole.log("Hello world!");',
-          '}'
-        ].join('\n'),
-        language: 'javascript'
-      });
-    });
-  </script>
+  <script type="text/javascript" src="turtle.js"></script>
 
 </body>
 
